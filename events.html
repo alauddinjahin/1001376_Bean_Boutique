@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Workshops</title>
+    <link rel="stylesheet" href="public/assets/css/bbc_styles.css">
+</head>
+<body>
+    <!-- Header and Navigation Bar -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Bean Boutique</h1>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="coffee.html">Coffee Selection</a></li>
+                    <li><a href="equipment.html">Brewing Equipment</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="cart.html">Cart 🛒<span class="cart-counter">0</span></a></li>
+                    <li><a href="subscriptions.html">Subscriptions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Upcoming Events Section -->
+    <section class="events-section">
+        <h2>Upcoming Events & Workshops</h2>
+
+        <div class="events-container">
+
+        <div class="event">
+            <img src="public/assets/images/9.jpg" alt="Coffee Tasting">
+            <div class="event-details">
+                <h3>Coffee Tasting Session</h3>
+                <p><strong>Date:</strong> March 15, 2024</p>
+                <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
+                <p><strong>Location:</strong> Bean Boutique Café</p>
+                <p>Join us for an exclusive coffee tasting event where you'll explore different coffee flavors and learn how to distinguish notes like a pro.</p>
+                <button class="register-btn" data-event="Coffee Tasting Session">Register</button>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="public/assets/images/10.jpg" alt="Brewing Class">
+            <div class="event-details">
+                <h3>Brewing Masterclass</h3>
+                <p><strong>Date:</strong> March 22, 2024</p>
+                <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+                <p><strong>Location:</strong> Bean Boutique Café</p>
+                <p>Learn the art of brewing coffee at home with expert baristas. We will cover pour-over, French press, and espresso techniques.</p>
+                <button class="register-btn" data-event="Brewing Masterclass">Register</button>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="public/assets/images/11.jpg" alt="Meet the Roaster">
+            <div class="event-details">
+                <h3>Meet the Roaster</h3>
+                <p><strong>Date:</strong> March 29, 2024</p>
+                <p><strong>Time:</strong> 5:00 PM - 7:00 PM</p>
+                <p><strong>Location:</strong> Bean Boutique Café</p>
+                <p>Get behind-the-scenes insights into coffee roasting with our head roaster. Learn how beans are selected and roasted for the perfect cup.</p>
+                <button class="register-btn" data-event="Meet the Roaster">Register</button>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Registration PopUp -->
+    <div id="registration-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Event Registration</h2>
+            <p id="event-name"></p>
+            <form id="registration-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Bean Boutique Coffee Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="public/assets/js/bbc_main.js"></script>
+</body>
+</html>
+
