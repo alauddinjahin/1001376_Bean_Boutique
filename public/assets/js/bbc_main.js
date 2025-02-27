@@ -12,49 +12,6 @@ class BbcMenuToggle {
     }
 }
 
-class BbcSlider {
-    constructor(slideClass) {
-        this.slideIndex = 0;
-        this.activeSlide=false;
-        this.slides = document.querySelectorAll(slideClass);
-        if(this.slides?.length) this.showSlides();
-    }
-
-    showSlides() {
-
-        this.slides.forEach(slide => {
-            slide.style.display = "none";
-            slide.querySelectorAll("[data-item]").forEach(item=>{
-
-                item.addEventListener("mouseenter",(e)=>{
-                    slide.classList.add("active")
-                    slide.style.display = "block";
-                    this.activeSlide = true;
-                })
-    
-                item.addEventListener("mouseleave",(e)=>{
-                    slide.classList.remove("active")
-                    this.activeSlide = false;
-                })
-            })
-
-
-        });
-
-        if(!this.activeSlide){
-            this.slideIndex++;
-        }
-
-        if (this.slideIndex > this.slides.length) { this.slideIndex = 1; }
-
-        const currentElem = this.slides[this.slideIndex - 1] || null;
-        if(currentElem){
-            currentElem.style.display = "block";
-        }
-        
-        setTimeout(() => this.showSlides(), 3000);
-    }
-}
 
 class BbcModal {
     constructor(BbcModalId, closeBtnClass, showOnFirstVisit = false) {
@@ -209,7 +166,7 @@ class BbcSubscription {
 class RegistrationBbcModal {
     constructor(BbcModalId, closeBtnClass, eventNameSelector, registerButtonSelector, formSelector) {
         this.BbcModal = document.getElementById(BbcModalId);
-        this.closeBtn = document.querySelector(closeBtnClass);
+        this.closeBtns = document.querySelectorAll(closeBtnClass);
         this.eventNameElement = document.querySelector(eventNameSelector);
         this.registerButtons = document.querySelectorAll(registerButtonSelector);
         this.registrationForm = document.querySelector(formSelector);
@@ -221,7 +178,10 @@ class RegistrationBbcModal {
             button.addEventListener("click", (event) => this.openBbcModal(event));
         });
 
-        this.closeBtn.addEventListener("click", () => this.closeBbcModal());
+        this.closeBtns.forEach(button => {
+            button.addEventListener("click", (event) => this.closeBbcModal(event));
+        });
+
 
         this.registrationForm.addEventListener("submit", (e) => this.handleFormSubmit(e));
     }
@@ -296,7 +256,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new BbcDiscountBbcModal("discount-BbcModal", ".close", "signup-btn");
     new BbcMenuToggle("menu-toggle", "nav-links");
-    new BbcSlider(".slide");
     new BbcModal("discount-BbcModal", ".close", true);
     new BbcProductInteraction(".coffee-item");
     new BbcProductInteraction(".equipment-item");
@@ -307,4 +266,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
     new BbcSubscription(".subscribe-btn", ".shop-now-btn");
     new RegistrationBbcModal("registration-modal", ".close", "#event-name", ".register-btn", "#registration-form");
+
+    new Glide('.glide', {
+        type: 'carousel', // or 'slider'
+        startAt: 0,
+        perView: 3, 
+        autoplay: 2000,
+        hoverpause: true, 
+        animationDuration: 300,
+        breakpoints: {
+            800: { perView: 2 }, 
+            680: { perView: 1 }  
+        }
+    }).mount();
 });

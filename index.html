@@ -7,6 +7,8 @@
     <meta name="description" content="Bean Boutique Coffee Shop | Premium Coffee Experience">
     <title>Bean Boutique Coffee Shop</title>
     <link rel="stylesheet" href="public/assets/css/bbc_styles.css">
+    <link rel="stylesheet" href="plugins/glide/css/glide.core.min.css">
+    <link rel="stylesheet" href="plugins/glide/css/glide.theme.min.css">
 </head>
 
 <body>
@@ -45,125 +47,57 @@
     <!-- Slideshow of Featured Products -->
     <section class="slideshow">
         <h2>Featured Products & Events</h2>
-        <div class="slideshow-container">
-
-            <div class="slide fade">
-
-                <div class="slide-items">
-
-                    <div data-item class="coffee-item">
-                        <img src="public/assets/images/1.jpg" alt="Espresso Blend">
-                        <div class="coffee-info">
-                            <h3>Espresso Blend</h3>
-                            <p>A rich, full-bodied blend with notes of dark chocolate and caramel.</p>
-                            <p><strong>Tasting Notes:</strong> Bold, Chocolatey, Smooth</p>
-                            <p><strong>Recommended Brewing:</strong> Espresso Machine, Moka Pot</p>
-                            <button class="add-to-cart" data-name="Espresso Blend" data-price="12.99" data-image="public/assets/images/1.jpg">Add to Cart</button>
-            
+        <div class="container ">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide slide-items">
+                        <div data-item class="equipment-item">
+                            <img src="public/assets/images/1.jpg" alt="Espresso Blend">
+                            <div class="coffee-info">
+                                <h3>Espresso Blend</h3>
+                                <p>A rich, full-bodied blend with notes of dark chocolate and caramel.</p>
+                                <p><strong>Tasting Notes:</strong> Bold, Chocolatey, Smooth</p>
+                                <p><strong>Recommended Brewing:</strong> Espresso Machine, Moka Pot</p>
+                                <button class="add-to-cart" data-name="Espresso Blend" data-price="12.99" data-image="public/assets/images/1.jpg">Add to Cart</button>
+                
+                            </div>
                         </div>
-                    </div>
-            
-                    <div data-item class="coffee-item">
-                        <img src="public/assets/images/2.jpg" alt="Ethiopian Single Origin">
-                        <div class="coffee-info">
-                            <h3>Ethiopian Single Origin</h3>
-                            <p>A bright, floral coffee with citrus and berry undertones.</p>
-                            <p><strong>Tasting Notes:</strong> Fruity, Floral, Light</p>
-                            <p><strong>Recommended Brewing:</strong> Pour Over, French Press</p>
-                            <button class="add-to-cart" data-name="Ethiopian Single Origin" data-price="12.99" data-image="public/assets/images/2.jpg">Add to Cart</button>
+                    </li>
+                    <li class="glide__slide slide-items">
+                        <div data-item class="equipment-item">
+                            <img src="public/assets/images/5.jpg" alt="Espresso Machine">
+                            <h3>Espresso Machine</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab, fugit quisquam reiciendis mollitia praesentium delectus perferendis possimus quo, quod aliquam aut, in quis neque!</p>
+                            <p><strong>Usage Tips:</strong> Use freshly ground beans for the best flavor.</p>
+                            <button class="add-to-cart" data-name="Espresso Machine" data-price="12.99" data-image="public/assets/images/5.jpg">Add to Cart</button>
                         </div>
-                    </div>
-            
-                    <div data-item class="coffee-item">
-                        <img src="public/assets/images/3.jpg" alt="Colombian Medium Roast">
-                        <div class="coffee-info">
-                            <h3>Colombian Medium Roast</h3>
-                            <p>A well-balanced coffee with nutty and caramel flavors.</p>
-                            <p><strong>Tasting Notes:</strong> Nutty, Caramel, Balanced</p>
-                            <p><strong>Recommended Brewing:</strong> Drip Coffee, Aeropress</p>
-                            <button class="add-to-cart" data-name="Colombian Medium Roast" data-price="12.99" data-image="public/assets/images/3.jpg">Add to Cart</button>
-            
+                    </li>
+                    <li class="glide__slide slide-items">
+                        <div data-item class="equipment-item">
+                            <img src="public/assets/images/9.jpg" alt="Coffee Tasting">
+                            <div class="event-details">
+                                <h3>Coffee Tasting Session</h3>
+                                <p><strong>Date:</strong> March 15, 2024</p>
+                                <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
+                                <p><strong>Location:</strong> Bean Boutique Café</p>
+                                <p>Join us for an exclusive coffee tasting event where you'll explore different coffee flavors and learn how to distinguish notes like a pro.</p>
+                                <button class="register-btn" data-event="Coffee Tasting Session">Register</button>
+                            </div>
                         </div>
-                    </div>
+                    </li>
+                  </ul>
                 </div>
-
-                <!-- <img src="public/assets/images/b_1.jpg" alt="Freshly Roasted Coffee Beans"> -->
-            </div>
-
-
-            <div class="slide fade">
-                <div class="slide-items">
-                    <div data-item class="equipment-item">
-                        <img src="public/assets/images/5.jpg" alt="Espresso Machine">
-                        <h3>Espresso Machine</h3>
-                        <p>Perfect for making rich, full-bodied espresso shots at home.</p>
-                        <p><strong>Usage Tips:</strong> Use freshly ground beans for the best flavor.</p>
-                        <button class="add-to-cart" data-name="Espresso Machine" data-price="12.99" data-image="public/assets/images/5.jpg">Add to Cart</button>
-                    </div>
         
-                    <div data-item class="equipment-item">
-                        <img src="public/assets/images/6.jpg" alt="French Press">
-                        <h3>French Press</h3>
-                        <p>A classic method that delivers a bold and full-bodied brew.</p>
-                        <p><strong>Usage Tips:</strong> Use coarse ground coffee and steep for 4 minutes.</p>
-                        <button class="add-to-cart" data-name="French Press" data-price="12.99" data-image="public/assets/images/6.jpg">Add to Cart</button>
-                    </div>
-        
-                    <div data-item class="equipment-item">
-                        <img src="public/assets/images/7.jpg" alt="Aeropress">
-                        <h3>Aeropress</h3>
-                        <p>A compact and portable coffee maker that brews smooth coffee.</p>
-                        <p><strong>Usage Tips:</strong> Experiment with different brewing times for varied flavors.</p>
-                        <button class="add-to-cart" data-name="Aeropress" data-price="12.99" data-image="public/assets/images/7.jpg">Add to Cart</button>
-                    </div>
-                </div>
-                <!-- <img src="public/assets/images/b_3.jpg" alt="Friends Enjoying Coffee"> -->
-            </div>
-
-            <div class="slide fade">
-                <div class="slide-items">
-                    <div data-item class="equipment-item">
-                        <img src="public/assets/images/9.jpg" alt="Coffee Tasting">
-                        <div class="event-details">
-                            <h3>Coffee Tasting Session</h3>
-                            <p><strong>Date:</strong> March 15, 2024</p>
-                            <p><strong>Time:</strong> 3:00 PM - 5:00 PM</p>
-                            <p><strong>Location:</strong> Bean Boutique Café</p>
-                            <p>Join us for an exclusive coffee tasting event where you'll explore different coffee flavors and learn how to distinguish notes like a pro.</p>
-                            <button class="register-btn" data-event="Coffee Tasting Session">Register</button>
-                        </div>
-                    </div>
-        
-                    <div data-item class="equipment-item">
-                        <img src="public/assets/images/10.jpg" alt="Brewing Class">
-                        <div class="event-details">
-                            <h3>Brewing Masterclass</h3>
-                            <p><strong>Date:</strong> March 22, 2024</p>
-                            <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
-                            <p><strong>Location:</strong> Bean Boutique Café</p>
-                            <p>Learn the art of brewing coffee at home with expert baristas. We will cover pour-over, French press, and espresso techniques.</p>
-                            <button class="register-btn" data-event="Brewing Masterclass">Register</button>
-                        </div>
-                    </div>
-            
-                    <div data-item class="equipment-item">
-                        <img src="public/assets/images/11.jpg" alt="Meet the Roaster">
-                        <div class="event-details">
-                            <h3>Meet the Roaster</h3>
-                            <p><strong>Date:</strong> March 29, 2024</p>
-                            <p><strong>Time:</strong> 5:00 PM - 7:00 PM</p>
-                            <p><strong>Location:</strong> Bean Boutique Café</p>
-                            <p>Get behind-the-scenes insights into coffee roasting with our head roaster. Learn how beans are selected and roasted for the perfect cup.</p>
-                            <button class="register-btn" data-event="Meet the Roaster">Register</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- <img src="public/assets/images/b_3.jpg" alt="Friends Enjoying Coffee"> -->
-            </div>
-
-
+                  <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                  </div>
+              </div>
         </div>
     </section>
+
 
     <!-- Informative Section -->
     <section class="info">
@@ -206,6 +140,7 @@
         </div>
     </footer>
 
+    <script src="plugins/glide/glide.js"></script>
     <script src="public/assets/js/bbc_main.js"></script>
 </body>
 

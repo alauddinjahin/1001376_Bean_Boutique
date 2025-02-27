@@ -299,9 +299,11 @@ button:hover {
     background-color: #8d6e53;
 }
 
-input[type="email"] {
+input[type="email"],
+input[type="text"]
+ {
     padding: 10px;
-    width: 80%;
+    width: 100%;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -309,7 +311,9 @@ input[type="email"] {
     box-sizing: border-box;
 }
 
-input[type="email"]:focus {
+input[type="email"]:focus,
+input[type="text"]:focus
+ {
     border-color: #6b4e37;
 }
 
@@ -341,7 +345,6 @@ input[type="email"]:focus {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1 1 calc(33.33% - 20px); 
-    max-width: 300px; 
     text-align: center;
 }
 
@@ -585,12 +588,9 @@ input[type="email"]:focus {
 }
 
 /* Modal Styles */
-
 .modal-content {
     background: white;
-    margin: 15% auto;
     padding: 20px;
-    width: 50%;
     text-align: center;
     border-radius: 10px;
 }
