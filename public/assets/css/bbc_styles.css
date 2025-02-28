@@ -1,5 +1,4 @@
 
-/* https://boutiquecoffeebeans.com.au/ */
 :root{
     --theme_bgcolor: #5A3E36;
     --theme_textcolor: #333;
@@ -147,6 +146,11 @@ header .bbcs__container {
 header .bbcs__logo {
     font-size: 2rem;
     font-weight: bold;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: var(--theme_header_footer_color) !important;
 }
 
 header nav {
