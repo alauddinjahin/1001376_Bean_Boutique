@@ -13,6 +13,7 @@ class BbcMenuToggle {
 }
 
 
+
 class BbcModal {
     constructor(BbcModalId, closeBtnClass, showOnFirstVisit = false) {
         this.BbcModal = document.getElementById(BbcModalId);
@@ -63,6 +64,20 @@ class BbcCart {
         }
     }
 
+    generateCartItem(item=null, index=-1){
+        
+        if(!item &&  typeof item !== "object") return;
+
+        return `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <p>Price: $${item.price}</p>
+            </div>
+            <button class="remove-btn" data-index="${index}">Remove</button> `;
+
+    }
+
     loadCart() {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         this.cartItemsContainer.innerHTML = "";
@@ -73,14 +88,7 @@ class BbcCart {
         cart.forEach((item, index) => {
             let cartItem = document.createElement("div");
             cartItem.classList.add("cart-item");
-            cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-info">
-                    <h3>${item.name}</h3>
-                    <p>Price: $${item.price}</p>
-                </div>
-                <button class="remove-btn" data-index="${index}">Remove</button>
-            `;
+            cartItem.innerHTML = this.generateCartItem( item, index);
             this.cartItemsContainer.appendChild(cartItem);
             total += item.price;
         });
@@ -267,16 +275,19 @@ document.addEventListener("DOMContentLoaded", () => {
     new BbcSubscription(".subscribe-btn", ".shop-now-btn");
     new RegistrationBbcModal("registration-modal", ".close", "#event-name", ".register-btn", "#registration-form");
 
-    new Glide('.glide', {
-        type: 'carousel', // or 'slider'
-        startAt: 0,
-        perView: 3, 
-        autoplay: 2000,
-        hoverpause: true, 
-        animationDuration: 300,
-        breakpoints: {
-            800: { perView: 2 }, 
-            680: { perView: 1 }  
-        }
-    }).mount();
+    if(typeof Glide !== "undefined"){
+        
+        new Glide('.glide', {
+            type: 'carousel', // or 'slider'
+            startAt: 0,
+            perView: 3, 
+            autoplay: 2000,
+            hoverpause: true, 
+            animationDuration: 300,
+            breakpoints: {
+                800: { perView: 2 }, 
+                680: { perView: 1 }  
+            }
+        }).mount();
+    }
 });
