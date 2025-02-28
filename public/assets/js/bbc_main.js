@@ -13,6 +13,31 @@ class BbcMenuToggle {
 }
 
 
+class BbcDiscountBbcModal {
+    constructor(BbcModalId, closeBtnClass, signupBtnId) {
+        this.BbcModal = document.getElementById(BbcModalId);
+        this.closeBtn = document.querySelector(closeBtnClass);
+        this.signupBtn = document.getElementById(signupBtnId);
+        if(this.BbcModal) this.init();
+    }
+
+    init() {
+        if (!localStorage.getItem("visited")) {
+            setTimeout(() => { this.BbcModal.style.display = "block"; }, 2000);
+            localStorage.setItem("visited", "true");
+        }
+
+        this.closeBtn.addEventListener("click", () => { 
+            this.BbcModal.style.display = "none"; 
+        });
+
+        this.signupBtn.addEventListener("click", () => {
+            alert("Thank you! Your discount has been applied.");
+            this.BbcModal.style.display = "none";
+        });
+    }
+}
+
 
 class BbcModal {
     constructor(BbcModalId, closeBtnClass, showOnFirstVisit = false) {
@@ -23,6 +48,7 @@ class BbcModal {
     }
 
     init() {
+
         this.closeBtn.addEventListener("click", () => {
             this.BbcModal.style.display = "none";
         });
@@ -70,11 +96,11 @@ class BbcCart {
 
         return `
             <img src="${item.image}" alt="${item.name}">
-            <div class="cart-item-info">
+            <div class="bbcs__cart-item-info">
                 <h3>${item.name}</h3>
                 <p>Price: $${item.price}</p>
             </div>
-            <button class="remove-btn" data-index="${index}">Remove</button> `;
+            <button class="bbcs__remove-btn" data-index="${index}">Remove</button> `;
 
     }
 
@@ -82,12 +108,12 @@ class BbcCart {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         this.cartItemsContainer.innerHTML = "";
         let total = 0;
-        const counter = document.querySelector(".cart-counter");
+        const counter = document.querySelector(".bbcs__cart-counter");
         counter.textContent = cart?.length || 0;
 
         cart.forEach((item, index) => {
             let cartItem = document.createElement("div");
-            cartItem.classList.add("cart-item");
+            cartItem.classList.add("bbcs__cart-item");
             cartItem.innerHTML = this.generateCartItem( item, index);
             this.cartItemsContainer.appendChild(cartItem);
             total += item.price;
@@ -95,7 +121,7 @@ class BbcCart {
 
         this.cartTotal.innerText = total.toFixed(2);
 
-        document.querySelectorAll(".remove-btn").forEach(button => {
+        document.querySelectorAll(".bbcs__remove-btn").forEach(button => {
             button.addEventListener("click", () => {
                 this.removeFromCart(button.getAttribute("data-index"));
             });
@@ -125,11 +151,12 @@ class CartActions {
     }
 
     loadCartCounter(){
-        const counter = document.querySelector(".cart-counter");
+        const counter = document.querySelector(".bbcs__cart-counter");
         counter.textContent = this.getCart()?.length || 0;
     }
 
     addToCart() {
+        console.log(this.addToCartButtons, 'this.addToCartButtons')
         this.addToCartButtons.forEach(button => {
             button.addEventListener("click", () => {
                 let name = button.getAttribute("data-name");
@@ -211,30 +238,7 @@ class RegistrationBbcModal {
     }
 }
 
-class BbcDiscountBbcModal {
-    constructor(BbcModalId, closeBtnClass, signupBtnId) {
-        this.BbcModal = document.getElementById(BbcModalId);
-        this.closeBtn = document.querySelector(closeBtnClass);
-        this.signupBtn = document.getElementById(signupBtnId);
-        if(this.BbcModal) this.init();
-    }
 
-    init() {
-        if (!localStorage.getItem("visited")) {
-            setTimeout(() => { this.BbcModal.style.display = "block"; }, 2000);
-            localStorage.setItem("visited", "true");
-        }
-
-        this.closeBtn.addEventListener("click", () => { 
-            this.BbcModal.style.display = "none"; 
-        });
-
-        this.signupBtn.addEventListener("click", () => {
-            alert("Thank you! Your discount has been applied.");
-            this.BbcModal.style.display = "none";
-        });
-    }
-}
 
 class NavBar{
     constructor(){
@@ -262,19 +266,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     new NavBar().activeMenu();
 
-    new BbcDiscountBbcModal("discount-BbcModal", ".close", "signup-btn");
+    new BbcDiscountBbcModal("discount-modal", ".bbcs__close", "signup-btn");
     new BbcMenuToggle("menu-toggle", "nav-links");
-    new BbcModal("discount-BbcModal", ".close", true);
-    new BbcProductInteraction(".coffee-item");
-    new BbcProductInteraction(".equipment-item");
-    new BbcCart("cart-items", "cart-total", "checkout-btn");
-
-    const cartActions = new CartActions(".add-to-cart");
+    new BbcModal("discount-modal", ".bbcs__close", true);
+    new BbcProductInteraction(".bbcs__coffee-item");
+    new BbcProductInteraction(".bbcs__equipment-item");
+    const cartActions = new CartActions(".bbcs__add-to-cart");
     cartActions.loadCartCounter();
-    
-    new BbcSubscription(".subscribe-btn", ".shop-now-btn");
-    new RegistrationBbcModal("registration-modal", ".close", "#event-name", ".register-btn", "#registration-form");
 
+    new BbcCart("cart-items", "cart-total", "checkout-btn");
+    
+    new BbcSubscription(".bbcs__subscribe-btn", ".bbcs__shop-now-btn");
+    new RegistrationBbcModal("registration-modal", ".bbcs__close", "#event-name", ".bbcs__register-btn", "#registration-form");
+
+    
+});
+
+document.addEventListener("DOMContentLoaded", () => {
     if(typeof Glide !== "undefined"){
         
         new Glide('.glide', {
@@ -289,5 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 680: { perView: 1 }  
             }
         }).mount();
+
+        
+        new CartActions(".bbcs__add-to-cart").loadCartCounter();
     }
-});
+})
