@@ -11,6 +11,7 @@
 }
 
 body {
+    scroll-behavior: smooth;
     font-family: var(--theme_font_family);
     margin: 0;
     padding: 0;
@@ -29,6 +30,22 @@ a{
 
 ul{
     list-style: none;
+}
+
+#bbcs__scroll__top__button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--theme_hovercolor);
+    color: var(--theme_header_footer_color);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
 }
 
 /* ------------------------------------------------ Footer Section ------------------------------------------------------ */
@@ -224,6 +241,42 @@ input[type="text"]:focus
 
 
 /* --------------------------------------------------- Nav & Header Css --------------------------------------------------- */
+
+header.__header_bccs_wrapper{
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+header.__header_bccs_wrapper.__sticky_transition{
+    width: 100%;
+    background: var(--theme_bgcolor);
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.3);
+    animation-name: animationFade;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+
+@keyframes animationFade {
+    
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        -o-transform: none;
+    }
+}
+
+
+
 header .bbcs__container {
     display: flex;
     justify-content: space-between;
@@ -379,6 +432,7 @@ header nav #__nav-links a.active {
 .bbcs__hero h2 {
     font-size: 2.5em;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .bbcs__hero p {
@@ -395,9 +449,11 @@ header nav #__nav-links a.active {
 }
 
 .bbcs__slideshow h2{
-    font-size: 2em;
-    margin-bottom: 15px;
+    font-size: calc(2em - 0.2em);
+    color: var(--theme_bgcolor);
+    font-weight: bold;
     text-align: center;
+    margin-bottom: 35px !important;
 }
 
 .bbcs__slideshow-container {
@@ -455,7 +511,9 @@ header nav #__nav-links a.active {
 }
 
 .bbcs__info h2 {
-    font-size: 2em;
+    font-size: calc(2em - 0.2em);
+    color: var(--theme_bgcolor);
+    font-weight: bold;
     margin: 0px !important;
     margin-bottom: 15px;
 }
@@ -466,7 +524,7 @@ header nav #__nav-links a.active {
 }
 
 .bbcs__info .bbcs__btn {
-    background-color: #6b4e37;
+    background-color: var(--theme_bgcolor);
     color: var(--theme_secondarycolor);
     padding: 12px 20px;
     font-size: 1.1em;
@@ -489,11 +547,13 @@ header nav #__nav-links a.active {
     background: #f5f5f5;
 }
 
-.bbcs__coffee-catalogue h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #333;
+
+.bbcs__coffee-catalogue h2{
+    font-size: calc(2em - 0.2em);
+    color: var(--theme_bgcolor);
+    font-weight: bold;
+    margin-bottom: 35px !important;
+
 }
 
 .bbcs__coffee-grid {
@@ -545,7 +605,13 @@ header nav #__nav-links a.active {
 /* --------------------------------------------------------- Equipment Section --------------------------------------------------- */
 .bbcs__equipment-catalogue {
     text-align: center;
-    padding: 40px 20px;
+    padding: 35px 20px;
+}
+
+.bbcs__equipment-catalogue h2{
+    font-size: calc(2em - 0.2em);
+    color: var(--theme_bgcolor);
+    font-weight: bold;
 }
 
 .bbcs__equipment-grid {
@@ -587,14 +653,13 @@ header nav #__nav-links a.active {
 .bbcs__events-section {
     text-align: center;
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 30px 20px;
 }
 .bbcs__events-section h2 {
-    font-size: 2em;
-    color: #5A3E36;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    font-size: calc(2em - 0.2em);
+    color: var(--theme_bgcolor);
+    margin-bottom: 35px !important;
     font-weight: bold;
 }
 
@@ -794,7 +859,7 @@ header nav #__nav-links a.active {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -821,7 +886,7 @@ header nav #__nav-links a.active {
 
 .bbcs__subscriptions {
     text-align: center;
-    padding: 40px 0;
+    margin: 35px 0px !important;
 }
 
 .bbcs__plans {
@@ -857,6 +922,7 @@ header nav #__nav-links a.active {
     color: var(--theme_textcolor);
     padding: 40px 0;
     text-align: center;
+    margin: 35px 0px;
 }
 
 .bbcs__benefits ul {

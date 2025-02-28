@@ -332,6 +332,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    window.addEventListener("scroll", function () {
+        let headerElem = document.querySelector("header.__header_bccs_wrapper");
+        let className = "__sticky_transition";
+        if (window.scrollY > 50) {
+            headerElem.classList.add(className)
+        }else{
+            headerElem.classList.remove(className)
+        }
+
+    });
+
+
+    const scrollTopBtn = document.getElementById("bbcs__scroll__top__button");
+	window.onscroll = () => {
+
+        let displayProperty = "none";
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            displayProperty = "block";
+        } 
+
+        scrollTopBtn.style.display = displayProperty;
+	}
+
+    const __scrollTopFunction = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+
+    scrollTopBtn.addEventListener("click", __scrollTopFunction)
+	
+	
+
+    
+
     if(typeof Glide !== "undefined"){
         
         new Glide('.glide', {

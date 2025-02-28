@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events & Workshops</title>
-    <link rel="icon" sizes="180x180" href="public/assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="public/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="public/assets/favicon-16x16.png">
-    <link rel="stylesheet" href="public/assets/css/bbc_styles.css">
+    <link rel="icon" sizes="180x180" href="./public/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/favicon-16x16.png">
+    <link rel="stylesheet" href="./public/assets/css/bbc_styles.css">
 </head>
 
 <body>
-    <!-- BBCS Header and Navigation Bar -->
-    <header>
+    <!--------------------------------------------------------- BBCS Header and Navigation Bar ------------------------------------->
+    <header class="__header_bccs_wrapper">
         <div class="bbcs__container">
             <h1 class="bbcs__logo">Coffee ☕</h1>
             <nav>
@@ -34,7 +34,7 @@
         </div>
     </header>
 
-    <!-- BBCS Upcoming Event Section -->
+    <!----------------------------------------------------------------------- BBCS Upcoming Event Section ------------------------------------------------>
     <section class="bbcs__events-section">
         <h2>Upcoming Events & Workshops</h2>
 
@@ -81,21 +81,7 @@
         </div>
     </section>
 
-    <!-- BBCS Register PopUp -->
-    <div id="registration-modal" class="bbcs__modal">
-        <div class="bbcs__modal-content">
-            <span class="bbcs__close">&times;</span>
-            <h2>Event Registration</h2>
-            <p id="event-name"></p>
-            <form id="registration-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- BBCS Footer Section -->
+    <!-------------------------------------------------------------------------------- BBCS Footer Section -------------------------------------------------->
     <footer>
         <div class="bbcs__container">
 
@@ -126,8 +112,8 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40" height="40">
                     </a>
     
-                    <a href="https://www.instagram.com/your_shop" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/YouTube_2020.png/640px-YouTube_2020.png" alt="Youtube" width="40" height="40">
+                    <a href="https://www.youtube.com/your_shop" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/640px-YouTube_full-color_icon_%282017%29.svg.png" alt="Youtube" width="40" height="40">
                     </a>
     
                     <a href="https://www.facebook.com/your_shop" target="_blank">
@@ -148,7 +134,24 @@
         </div>
     </footer>
 
-    <script src="public/assets/js/bbc_main.js"></script>
+     <!------------------------------------------------------------------ BBCS Register PopUp -------------------------------------------->
+     <div id="registration-modal" class="bbcs__modal">
+        <div class="bbcs__modal-content">
+            <span class="bbcs__close">&times;</span>
+            <h2>Event Registration</h2>
+            <p id="event-name"></p>
+            <form id="registration-form">
+                <input type="text" id="eventname" placeholder="Your Name" required>
+                <input type="email" id="eventemail" placeholder="Your Email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="bbcs__scroll__top__button" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+
+    <script src="./plugins/font-awesome/6.4.2.all.min.js"></script>
+    <script src="./public/assets/js/bbc_main.js"></script>
 </body>
 
 </html>
