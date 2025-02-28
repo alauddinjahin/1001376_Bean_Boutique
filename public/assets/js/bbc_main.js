@@ -275,13 +275,18 @@ class WishList {
     static toggleWishList(name, price, image){
         let wishList = WishList.getWishList();
         const itemIndex = wishList.findIndex(item => item.name === name);
+        let msg = null;
         if (itemIndex === -1){
             wishList.push({ name, price: parseFloat(price), image });
+            msg = `${name} is added to your WishList!`;
         }else{
             wishList = wishList.filter(item => item.name !== name)
+            msg = `${name} is removed from your WishList!`;
+
         }
 
         localStorage.setItem("wishList", JSON.stringify(wishList));
+        alert(msg)
     }
 
     static addToWishList(){
@@ -326,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     if(typeof Glide !== "undefined"){
         
         new Glide('.glide', {
