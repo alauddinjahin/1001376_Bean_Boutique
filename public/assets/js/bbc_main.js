@@ -345,15 +345,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const scrollTopBtn = document.getElementById("bbcs__scroll__top__button");
-	window.onscroll = () => {
-
+    const __toggleScrollTopBtn = ()=>{
         let displayProperty = "none";
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             displayProperty = "block";
         } 
 
         scrollTopBtn.style.display = displayProperty;
-	}
+    }
 
     const __scrollTopFunction = () => {
         window.scrollTo({
@@ -362,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+	window.onscroll = __toggleScrollTopBtn
     scrollTopBtn.addEventListener("click", __scrollTopFunction)
 	
 	
