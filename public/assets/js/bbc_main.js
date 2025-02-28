@@ -361,12 +361,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-	window.onscroll = __toggleScrollTopBtn
-    scrollTopBtn.addEventListener("click", __scrollTopFunction)
+    if(scrollTopBtn){
+        window.onscroll = __toggleScrollTopBtn
+        scrollTopBtn.addEventListener("click", __scrollTopFunction)
+    }
 	
-	
-
-    
+	    
 
     if(typeof Glide !== "undefined"){
         
