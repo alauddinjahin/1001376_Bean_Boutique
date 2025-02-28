@@ -156,7 +156,7 @@ class CartActions {
     }
 
     addToCart() {
-        console.log(this.addToCartButtons, 'this.addToCartButtons')
+        // console.log(this.addToCartButtons, 'this.addToCartButtons')
         this.addToCartButtons.forEach(button => {
             button.addEventListener("click", () => {
                 let name = button.getAttribute("data-name");
@@ -242,7 +242,7 @@ class RegistrationBbcModal {
 
 class NavBar{
     constructor(){
-        this.navLinks = document.querySelectorAll("header nav #nav-links a");
+        this.navLinks = document.querySelectorAll("header nav #__nav-links a");
     }
 
     activePath(){
@@ -261,28 +261,72 @@ class NavBar{
     }
 }
 
+class WishList {
+    constructor(elementRef){
+        if(elementRef){
+            this.elementRef = elementRef;
+        }
+    }
+
+    static getWishList(){
+        return JSON.parse(localStorage.getItem("wishList")) || [];
+    }
+
+    static toggleWishList(name, price, image){
+        let wishList = WishList.getWishList();
+        const itemIndex = wishList.findIndex(item => item.name === name);
+        if (itemIndex === -1){
+            wishList.push({ name, price: parseFloat(price), image });
+        }else{
+            wishList = wishList.filter(item => item.name !== name)
+        }
+
+        localStorage.setItem("wishList", JSON.stringify(wishList));
+    }
+
+    static addToWishList(){
+
+        document.body.addEventListener("click", function (event) {
+            if (event.target.closest(".__which__list")) {
+                const button = event.target.closest(".__which__list").parentElement.querySelector(".bbcs__add-to-cart");
+                let name = button.getAttribute("data-name");
+                let price = button.getAttribute("data-price");
+                let image = button.getAttribute("data-image");
+                WishList.toggleWishList(name, price, image);
+            }
+        });
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
     new NavBar().activeMenu();
 
     new BbcDiscountBbcModal("discount-modal", ".bbcs__close", "signup-btn");
-    new BbcMenuToggle("menu-toggle", "nav-links");
+    new BbcMenuToggle("menu-toggle", "__nav-links");
     new BbcModal("discount-modal", ".bbcs__close", true);
     new BbcProductInteraction(".bbcs__coffee-item");
     new BbcProductInteraction(".bbcs__equipment-item");
     const cartActions = new CartActions(".bbcs__add-to-cart");
     cartActions.loadCartCounter();
 
+    WishList.addToWishList();
+
     new BbcCart("cart-items", "cart-total", "checkout-btn");
     
     new BbcSubscription(".bbcs__subscribe-btn", ".bbcs__shop-now-btn");
     new RegistrationBbcModal("registration-modal", ".bbcs__close", "#event-name", ".bbcs__register-btn", "#registration-form");
 
+    document.body.addEventListener("click", function (event) {
+        if (event.target.closest(".bbcs___search_icon")) {
+            document.querySelector(".bbcs__search_box").classList.toggle("bbcs___show_search");
+        }
+    });
     
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    
     if(typeof Glide !== "undefined"){
         
         new Glide('.glide', {
@@ -300,5 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
         new CartActions(".bbcs__add-to-cart").loadCartCounter();
+        
     }
+
 })

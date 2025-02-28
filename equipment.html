@@ -22,13 +22,20 @@
                     <span></span>
                     <span></span>
                 </div>
-                <ul id="nav-links">
+                <ul id="__nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="coffee.html">Coffee Selection</a></li>
                     <li><a href="equipment.html">Brewing Equipment</a></li>
                     <li><a href="events.html">Events</a></li>
-                    <li><a href="cart.html">Cart 🛒<span class="bbcs__cart-counter">0</span></a></li>
                     <li><a href="subscriptions.html">Subscriptions</a></li>
+                    <li><a href="cart.html">Cart 🛒<span class="bbcs__cart-counter">0</span></a></li>
+                    <li>
+                        <div class="bbcs___search-container"><i class="fas fa-search bbcs___search_icon"></i> 
+                            <div class="bbcs__search_box">
+                                <input type="text" class="bbcs___search" placeholder="Search...">
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -39,7 +46,8 @@
         <h2>Our Brewing Equipment</h2>
 
         <div class="bbcs__equipment-grid">
-            <div class="bbcs__equipment-item">
+            <div class="bbcs__equipment-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/5.jpg" alt="Espresso Machine">
                 <h3>Espresso Machine</h3>
                 <p>Perfect for making rich, full-bodied espresso shots at home.</p>
@@ -48,7 +56,8 @@
                     data-image="public/assets/images/5.jpg">Add to Cart</button>
             </div>
 
-            <div class="bbcs__equipment-item">
+            <div class="bbcs__equipment-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/6.jpg" alt="French Press">
                 <h3>French Press</h3>
                 <p>A classic method that delivers a bold and full-bodied brew.</p>
@@ -57,7 +66,8 @@
                     data-image="public/assets/images/6.jpg">Add to Cart</button>
             </div>
 
-            <div class="bbcs__equipment-item">
+            <div class="bbcs__equipment-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/7.jpg" alt="Aeropress">
                 <h3>Aeropress</h3>
                 <p>A compact and portable coffee maker that brews smooth coffee.</p>
@@ -67,7 +77,8 @@
                     data-image="public/assets/images/7.jpg">Add to Cart</button>
             </div>
 
-            <div class="bbcs__equipment-item">
+            <div class="bbcs__equipment-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/8.jpg" alt="Pour Over">
                 <h3>Pour Over</h3>
                 <p>Brings out delicate flavors and aromas through slow extraction.</p>
@@ -130,6 +141,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="public/assets/js/bbc_main.js"></script>
 </body>
 

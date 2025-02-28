@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bean-Boutique-Coffee-Shop | Premium-Coffee">
     <title>Bean Boutique Coffee Shop</title>
-    <link rel="icon" sizes="180x180" href="public/assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="public/assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="public/assets/favicon-16x16.png">
+    <link rel="icon" sizes="180x180" href="./public/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/favicon-16x16.png">
 
-    <link rel="stylesheet" href="public/assets/css/bbc_styles.css">
-    <link rel="stylesheet" href="plugins/glide/css/glide.core.min.css">
-    <link rel="stylesheet" href="plugins/glide/css/glide.theme.min.css">
+    <link rel="stylesheet" href="./public/assets/css/bbc_styles.css">
+    <link rel="stylesheet" href="./plugins/glide/css/glide.core.min.css">
+    <link rel="stylesheet" href="./plugins/glide/css/glide.theme.min.css">
 </head>
 
 <body>
@@ -27,13 +27,13 @@
                     <span></span>
                     <span></span>
                 </div>
-                <ul id="nav-links">
+                <ul id="__nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="coffee.html">Coffee Selection</a></li>
                     <li><a href="equipment.html">Brewing Equipment</a></li>
                     <li><a href="events.html">Events</a></li>
-                    <li><a href="cart.html">Cart 🛒<span class="bbcs__cart-counter">0</span></a></li>
                     <li><a href="subscriptions.html">Subscriptions</a></li>
+                    <li><a href="cart.html">Cart 🛒<span class="bbcs__cart-counter">0</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -57,7 +57,8 @@
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         <li class="glide__slide bbcs__slide-items">
-                            <div data-item class="bbcs__equipment-item">
+                            <div data-item class="bbcs__equipment-item __position_relative">
+                                <span class="__which__list fas fa-heart"></span>
                                 <img src="public/assets/images/1.jpg" alt="Espresso Blend">
                                 <div class="bbcs__coffee-info">
                                     <h3>Espresso Blend</h3>
@@ -71,7 +72,8 @@
                             </div>
                         </li>
                         <li class="glide__slide bbcs__slide-items">
-                            <div data-item class="bbcs__equipment-item">
+                            <div data-item class="bbcs__equipment-item __position_relative">
+                                <span class="__which__list fas fa-heart"></span>
                                 <img src="public/assets/images/5.jpg" alt="Espresso Machine">
                                 <h3>Espresso Machine</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab, fugit quisquam
@@ -84,7 +86,7 @@
                             </div>
                         </li>
                         <li class="glide__slide bbcs__slide-items">
-                            <div data-item class="bbcs__equipment-item">
+                            <div data-item class="bbcs__equipment-item eventx">
                                 <img src="public/assets/images/9.jpg" alt="Coffee Tasting">
                                 <div class="bbcs__event-details">
                                     <h3>Coffee Tasting Session</h3>
@@ -203,6 +205,7 @@
 
 
     <script src="plugins/glide/glide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="public/assets/js/bbc_main.js"></script>
 </body>
 

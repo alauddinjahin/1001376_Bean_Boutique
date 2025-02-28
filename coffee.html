@@ -22,24 +22,33 @@
                     <span></span>
                     <span></span>
                 </div>
-                <ul id="nav-links">
+                <ul id="__nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="coffee.html">Coffee Selection</a></li>
                     <li><a href="equipment.html">Brewing Equipment</a></li>
                     <li><a href="events.html">Events</a></li>
-                    <li><a href="cart.html">Cart 🛒<span class="bbcs__cart-counter">0</span></a></li>
                     <li><a href="subscriptions.html">Subscriptions</a></li>
+                    <li><a href="cart.html">Cart 🛒<span class="bbcs__cart-counter">0</span></a></li>
+                    <li>
+                        <div class="bbcs___search-container"><i class="fas fa-search bbcs___search_icon"></i> 
+                            <div class="bbcs__search_box">
+                                <input type="text" class="bbcs___search" placeholder="Search...">
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- BBCS Coffee Selection Section -->
+
     <section class="bbcs__coffee-catalogue">
         <h2>Our Coffee Selection</h2>
         <div class="bbcs__coffee-grid">
 
-            <div class="bbcs__coffee-item">
+            <div class="bbcs__coffee-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/1.jpg" alt="Espresso Blend">
                 <div class="bbcs__coffee-info">
                     <h3>Espresso Blend</h3>
@@ -52,7 +61,8 @@
                 </div>
             </div>
 
-            <div class="bbcs__coffee-item">
+            <div class="bbcs__coffee-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/2.jpg" alt="Ethiopian Single Origin">
                 <div class="bbcs__coffee-info">
                     <h3>Ethiopian Single Origin</h3>
@@ -64,7 +74,8 @@
                 </div>
             </div>
 
-            <div class="bbcs__coffee-item">
+            <div class="bbcs__coffee-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/3.jpg" alt="Colombian Medium Roast">
                 <div class="bbcs__coffee-info">
                     <h3>Colombian Medium Roast</h3>
@@ -77,7 +88,8 @@
                 </div>
             </div>
 
-            <div class="bbcs__coffee-item">
+            <div class="bbcs__coffee-item __position_relative">
+                <span class="__which__list fas fa-heart"></span>
                 <img src="public/assets/images/4.jpg" alt="Dark Roast">
                 <div class="bbcs__coffee-info">
                     <h3>Dark Roast</h3>
@@ -145,6 +157,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <script src="public/assets/js/bbc_main.js"></script>
 </body>
 

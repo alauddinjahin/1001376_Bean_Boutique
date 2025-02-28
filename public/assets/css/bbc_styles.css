@@ -125,6 +125,27 @@ footer .bbcs__container .__wrapper_footer div.__menus__important ul
     margin: 0 auto;
 }
 
+.__position_relative{
+    position: relative !important;
+}
+
+.__which__list {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 24px;
+    color: var(--theme_header_footer_color);
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.__which__list:hover{
+    color: red;
+}
+
+.__which__list.active {
+    color: red;
+}
 
 /* ------------------------------------------------ Modal ------------------------------------------------------ */
 
@@ -227,16 +248,16 @@ header nav {
     align-items: center;
 }
 
-header nav #nav-links {
+header nav #__nav-links {
     list-style: none;
     display: flex;
 }
 
-header nav #nav-links li {
+header nav #__nav-links li {
     margin: 0 10px;
 }
 
-header nav #nav-links a {
+header nav #__nav-links a {
     color: var(--theme_secondarycolor);
     text-decoration: none;
     font-size: 1rem;
@@ -244,13 +265,60 @@ header nav #nav-links a {
     transition: 0.3s;
 }
 
-header nav #nav-links a:hover,
-header nav #nav-links a.active {
+header nav #__nav-links a:hover,
+header nav #__nav-links a.active {
     background-color: var(--theme_hovercolor);
     border-radius: 5px;
 }
 
 
+
+/* --------------------------------------------- Header Search bar toggle ---------------------------------------------------- */
+
+.bbcs___search-container {
+    position: relative;
+}
+
+.bbcs__search_box{
+    background-color: #f5f5f5;
+    position: absolute;
+    top: -100px;
+    right: 0;
+    min-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: block;
+    padding: 20px !important;
+    z-index: 100;
+}
+
+
+.bbcs___search-container input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.bbcs___search-container .bbcs__search_box.bbcs___show_search {
+    opacity: 1;
+    top: 0;
+    transform: translate(10px, 110px);
+
+}
+
+.bbcs___search-container svg {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: var(--theme_header_footer_color);
+}
 
 /* --------------------------------------------- Toggle Menu css for smaller screens ---------------------------------------------------- */
 .bbcs__menu-toggle {
@@ -263,7 +331,6 @@ header nav #nav-links a.active {
     cursor: pointer;
     position: absolute;
     top: 35px;
-    /* left: calc(100% - 4em); */
     right: calc(60px - .9em);
     padding: 10px;
     
@@ -281,6 +348,7 @@ header nav #nav-links a.active {
 /* --------------------------------------------------- Hero Section in Home Page --------------------------------------------------- */
 
 .bbcs__hero {
+    position: relative;
     background: url('../images/b_5.jpg') no-repeat center/cover;
     height: calc(100vh - 100px);
     display: flex;
@@ -288,6 +356,24 @@ header nav #nav-links a.active {
     justify-content: center;
     text-align: center;
     color: var(--theme_secondarycolor);
+}
+
+.bbcs__hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    background: rgb(90 62 54 / 30%);
+    z-index: 1;
+}
+
+.bbcs__hero .bbcs__hero-content{
+    position: relative;
+    z-index: 2; 
+    color: var(--theme_secondarycolor);
+    text-align: center;
 }
 
 .bbcs__hero h2 {
@@ -365,7 +451,7 @@ header nav #nav-links a.active {
     background-color: #fff8e1;
     padding: 50px 0px;
     text-align: center;
-    /* margin: 20px 0px 40px 0px; */
+    margin: 20px 0px 40px 0px;
 }
 
 .bbcs__info h2 {
@@ -376,7 +462,7 @@ header nav #nav-links a.active {
 
 .bbcs__info p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .bbcs__info .bbcs__btn {
@@ -433,13 +519,13 @@ header nav #nav-links a.active {
 
 .bbcs__coffee-item img {
     width: 100%;
-    height: 250px;
+    max-height: 200px;
     object-fit: cover;
-    border-bottom: 2px solid #e2e2e2;
+    border-radius: 8px;
 }
 
 .bbcs__coffee-info {
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
 }
 
 .bbcs__coffee-info h3 {
@@ -794,11 +880,11 @@ header nav #nav-links a.active {
         display: flex;
     }
 
-    header nav #nav-links {
+    header nav #__nav-links {
         display: none;
     }
     
-    header nav #nav-links.show{
+    header nav #__nav-links.show{
         flex-direction: column;
         align-items: flex-start;
         display: flex;
@@ -824,6 +910,14 @@ header nav #nav-links a.active {
     nav ul.show {
         display: flex;
         flex-direction: column;
+    }
+
+    .bbcs__search_box{
+        left: 0;
+    }
+    
+    .bbcs___search-container .bbcs__search_box.bbcs___show_search {
+        top: -55px;
     }
 
     
@@ -931,6 +1025,8 @@ header nav #nav-links a.active {
         padding: 20px;
     }
 }
+
+
 
 
 
