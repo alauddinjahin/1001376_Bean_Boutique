@@ -24,9 +24,10 @@ header, footer{
     padding: 20px 0;
 }
 
-a{
+a:not(.link__cursor__allow){
     text-decoration: none;
 }
+
 
 ul{
     list-style: none;
@@ -219,6 +220,7 @@ button:hover {
 }
 
 input[type="email"],
+input[type="password"],
 input[type="text"]
  {
     padding: 10px;
@@ -237,9 +239,53 @@ input[type="text"]:focus
 }
 
 
+.bbcs__auth_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 25px);
+    max-height: max-content;
+    padding: 20px 15px;
+}
 
+.bbcs__auth_container form{
+    background: #f9f9f9;
+    padding: 20px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
 
+.bbcs__auth_container form h2{
+    text-align: center;
+}
 
+.bbcs__auth_container div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.bbcs__auth_container div:last-child button{
+    width: 100%;
+}
+
+.bbcs__auth_container a{
+    font-size: 14px;
+}
+
+.__wrapper_event_registration{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bbcs__coffee-item > div:hover,
+.bbcs__equipment-item > div:hover{
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
 /* --------------------------------------------------- Nav & Header Css --------------------------------------------------- */
 
 header.__header_bccs_wrapper{
@@ -328,26 +374,45 @@ header nav #__nav-links a.active {
 
 /* --------------------------------------------- Header Search bar toggle ---------------------------------------------------- */
 
+.overlay__search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay__search.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+
 .bbcs___search-container {
-    position: relative;
+    
 }
 
 .bbcs__search_box{
     background-color: #f5f5f5;
     position: absolute;
-    top: -100px;
     right: 0;
     min-width: 300px;
     width: 100%;
-    border-radius: 10px;
     opacity: 0;
-    transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    display: block;
-    padding: 20px !important;
+    display: flex;
+    justify-content: center;
     z-index: 100;
 }
 
+.__wrapper_search_box{
+    width: 60%;
+    padding: 10px 20px;
+}
 
 .bbcs___search-container input {
     width: 100%;
@@ -360,9 +425,16 @@ header nav #__nav-links a.active {
 .bbcs___search-container .bbcs__search_box.bbcs___show_search {
     opacity: 1;
     top: 0;
-    transform: translate(10px, 110px);
+    /* transform: translate(10px, 110px); */
 
 }
+
+
+.bbcs__search_box svg {
+    color: var(--theme_textcolor) !important;
+    margin-top: 15px;
+}
+
 
 .bbcs___search-container svg {
     position: absolute;
@@ -931,6 +1003,15 @@ header nav #__nav-links a.active {
 }
 
 
+.bbcs__oops_content{
+    min-height: 33vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /* --------------------------------------------------- Media Queries --------------------------------------------------- */
 
@@ -1089,6 +1170,15 @@ header nav #__nav-links a.active {
     .bbcs__event-details {
         flex: 1;
         padding: 20px;
+    }
+
+    .bbcs__oops_content h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    .bbcs__oops_content p {
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 }
 
