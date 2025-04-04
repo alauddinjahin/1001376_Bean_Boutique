@@ -146,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         new Glide('.glide', configGlide).mount();
         
     }
+
     
 });
 

@@ -14,8 +14,8 @@
 <body>
 
     <section class="bbcs__auth_container">
-        <a href="index.html"><h2>Coffee ☕</h2></a>
-        <form action="#" method="post">
+        <a href="index.html"><h1>Coffee ☕</h1></a>
+        <form action="#" method="post" id="register_form">
             <div class="input__wrapper">
                 <label for="fname">First Name</label>
                 <input type="text" name="fname" id="fname">
@@ -47,12 +47,16 @@
             </div>
 
             <div class="btn__groups">
+                <div class="g-recaptcha" data-sitekey="6LcxfQorAAAAAMpvHEOtWPgiZzNGeGzEh2MftaDr"></div>
                 <button type="button">Register</button>
                 <a href="login.html" class="link__cursor__allow">Haven an Account! Login.</a>
             </div>
+
+           
         </form>
     </section>
-
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
