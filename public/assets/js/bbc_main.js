@@ -125,17 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     });
-    
-});
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    
-
+    // Home page slider 
     if(typeof Glide !== "undefined"){
-        
-        new Glide('.glide', {
+
+        const configGlide = {
             type: 'carousel', // or 'slider'
             startAt: 0,
             perView: 3, 
@@ -146,8 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 800: { perView: 2 }, 
                 680: { perView: 1 }  
             }
-        }).mount();
+        };
+        
+        new Glide('.glide', configGlide).mount();
         
     }
+    
+});
 
-})
+

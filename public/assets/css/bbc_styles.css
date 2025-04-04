@@ -372,6 +372,7 @@ header nav #__nav-links a.active {
 
 
 
+
 /* --------------------------------------------- Header Search bar toggle ---------------------------------------------------- */
 
 .overlay__search {
@@ -389,6 +390,7 @@ header nav #__nav-links a.active {
 .overlay__search.active{
     visibility: visible;
     opacity: 1;
+    z-index: 99;
 }
 
 
@@ -409,9 +411,13 @@ header nav #__nav-links a.active {
     z-index: 100;
 }
 
-.__wrapper_search_box{
+.bbcs__search_box .__wrapper_search_box{
     width: 60%;
     padding: 10px 20px;
+}
+
+.bbcs__search_box:not(.bbcs___show_search) .__wrapper_search_box{
+    display: none;
 }
 
 .bbcs___search-container input {
