@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new BbcMenuToggle("menu-toggle", "__nav-links");
 
     // open discount modal for the firstime user
-    new BbcDiscountBbcModal("discount-modal", ".bbcs__close", "signup-btn");
+    new BbcDiscountBbcModal("discount-modal", ".bbcs__close", "claimOffer");
 
     // sticky header on scroll
     window.addEventListener("scroll", function () {
