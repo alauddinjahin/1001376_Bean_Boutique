@@ -33,6 +33,10 @@ ul{
     list-style: none;
 }
 
+#wrapper_claim_email{
+    text-align: left !important;
+}
+
 #bbcs__scroll__top__button {
     display: none;
     position: fixed;
